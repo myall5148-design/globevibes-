@@ -4,7 +4,7 @@ export const FALLBACK_SETTINGS: SiteSettings = {
   id: 'default',
   site_name: 'Globevibes',
   site_description: 'The premier destination for music news, entertainment, trending stories, celebrity buzz, and African entertainment culture.',
-  site_url: 'https://globevibes.com',
+  site_url: 'https://globevibez.2bd.net',
   default_seo_title: 'Globevibes – Music, Entertainment, African Beats & Trending News',
   default_seo_description: 'Discover the latest music releases, Afrobeats superstars, Nollywood cinema, celebrity exclusives, and viral trending entertainment on Globevibes.',
   social_twitter: 'https://x.com/globevibes',
@@ -13,7 +13,7 @@ export const FALLBACK_SETTINGS: SiteSettings = {
   social_instagram: 'https://instagram.com/globevibes',
   social_youtube: 'https://youtube.com/@globevibes',
   footer_copyright: '© 2026 Globevibes Media Group. All rights reserved.',
-  contact_email: 'editorial@globevibes.com'
+  contact_email: 'editorial@globevibez.2bd.net'
 };
 
 export const FALLBACK_CATEGORIES: Category[] = [

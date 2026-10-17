@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://globevibes.com/sitemap.xml
+Sitemap: https://globevibez.2bd.net/sitemap.xml

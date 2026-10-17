@@ -1,77 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://globevibes.com/</loc>
+    <loc>https://globevibez.2bd.net/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/articles</loc>
+    <loc>https://globevibez.2bd.net/articles</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/categories</loc>
+    <loc>https://globevibez.2bd.net/categories</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/category/technology</loc>
+    <loc>https://globevibez.2bd.net/category/music</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/category/business</loc>
+    <loc>https://globevibez.2bd.net/category/entertainment</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/category/science</loc>
+    <loc>https://globevibez.2bd.net/category/latest-news</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/category/culture</loc>
+    <loc>https://globevibez.2bd.net/category/trending</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/article/the-silicon-renaissance-next-gen-lithography</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://globevibez.2bd.net/category/features</loc>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/article/grid-architecture-2030s-energy-storage</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://globevibez.2bd.net/category/celebrity-news</loc>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/article/sovereign-wealth-realignment-nearshoring-capital</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://globevibez.2bd.net/category/african-entertainment</loc>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/article/civic-geometry-15-minute-urban-districts</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://globevibes.com/about</loc>
+    <loc>https://globevibez.2bd.net/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/contact</loc>
+    <loc>https://globevibez.2bd.net/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/privacy</loc>
+    <loc>https://globevibez.2bd.net/privacy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://globevibes.com/terms</loc>
+    <loc>https://globevibez.2bd.net/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

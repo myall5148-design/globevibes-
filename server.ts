@@ -92,7 +92,7 @@ checkScheduledArticles();
 
 app.get('/robots.txt', (_req: Request, res: Response) => {
   const settings = db.prepare("SELECT site_url FROM site_settings WHERE id = 'default'").get() as any;
-  const siteUrl = settings?.site_url || 'https://globevibes.com';
+  const siteUrl = settings?.site_url || 'https://globevibez.2bd.net';
 
   const content = `# Robots.txt for Globevibes
 User-agent: *
@@ -110,7 +110,7 @@ Sitemap: ${siteUrl}/sitemap.xml
 app.get('/sitemap.xml', (_req: Request, res: Response) => {
   checkScheduledArticles();
   const settings = db.prepare("SELECT site_url FROM site_settings WHERE id = 'default'").get() as any;
-  const siteUrl = (settings?.site_url || 'https://globevibes.com').replace(/\/$/, '');
+  const siteUrl = (settings?.site_url || 'https://globevibez.2bd.net').replace(/\/$/, '');
 
   const publishedArticles = db.prepare(`
     SELECT slug, published_at, updated_at
@@ -1603,7 +1603,7 @@ app.put('/api/admin/settings', authMiddleware, (req: Request, res: Response) => 
     site_description || '',
     logo_url || null,
     favicon_url || null,
-    site_url || 'https://globevibes.com',
+    site_url || 'https://globevibez.2bd.net',
     default_seo_title || null,
     default_seo_description || null,
     social_facebook || null,
@@ -1613,7 +1613,7 @@ app.put('/api/admin/settings', authMiddleware, (req: Request, res: Response) => 
     social_youtube || null,
     default_share_image || null,
     footer_copyright || '© Globevibes Media Group. All rights reserved.',
-    contact_email || 'editorial@globevibes.com',
+    contact_email || 'editorial@globevibez.2bd.net',
     analytics_id || null
   );
 

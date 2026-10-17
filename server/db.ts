@@ -211,7 +211,7 @@ function seedInitialData() {
         'default',
         'Globevibes',
         'The premier destination for music news, entertainment, trending stories, celebrity buzz, and African entertainment culture.',
-        'https://globevibes.com',
+        'https://globevibez.2bd.net',
         'Globevibes – Music, Entertainment, African Beats & Trending News',
         'Discover the latest music releases, Afrobeats superstars, Nollywood cinema, celebrity exclusives, and viral trending entertainment on Globevibes.',
         'https://x.com/globevibes',
@@ -220,7 +220,7 @@ function seedInitialData() {
         'https://instagram.com/globevibes',
         'https://youtube.com/@globevibes',
         '© 2026 Globevibes Media Group. All rights reserved.',
-        'editorial@globevibes.com'
+        'editorial@globevibez.2bd.net'
       )
     `).run();
   }

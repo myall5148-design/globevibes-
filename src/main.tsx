@@ -3,21 +3,27 @@ import App from './App.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import './index.css';
 
+let isGlobevibesMounted = false;
+
 function mountGlobevibes() {
+  if (isGlobevibesMounted || (window as any).__GLOBEVIBES_MOUNTED) return;
   const rootElement = document.getElementById('root');
   if (!rootElement) return;
 
   try {
+    isGlobevibesMounted = true;
+    (window as any).__GLOBEVIBES_MOUNTED = true;
+    (window as any).__APEX_MOUNTED = true;
+
     const root = createRoot(rootElement);
     root.render(
       <ErrorBoundary>
         <App />
       </ErrorBoundary>
     );
-    // Notify preloader timeout guard that React has mounted successfully
-    (window as any).__GLOBEVIBES_MOUNTED = true;
-    (window as any).__APEX_MOUNTED = true;
   } catch (err: any) {
+    isGlobevibesMounted = false;
+    (window as any).__GLOBEVIBES_MOUNTED = false;
     console.error('Fatal initialization error mounting Globevibes:', err);
     rootElement.innerHTML = `
       <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #fafaf9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; text-align: center;">
