@@ -20,15 +20,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [newsletterMsg, setNewsletterMsg] = useState('');
 
-  // Primary categories requested by user
+  // Primary artist navigation categories
   const primaryNavItems = [
-    { label: 'Music', path: '/category/music', slug: 'music' },
-    { label: 'Entertainment', path: '/category/entertainment', slug: 'entertainment' },
-    { label: 'Latest News', path: '/category/latest-news', slug: 'latest-news' },
-    { label: 'Trending', path: '/category/trending', slug: 'trending' },
-    { label: 'Features', path: '/category/features', slug: 'features' },
-    { label: 'Celebrity News', path: '/category/celebrity-news', slug: 'celebrity-news' },
-    { label: 'African Entertainment', path: '/category/african-entertainment', slug: 'african-entertainment', highlight: true }
+    { label: 'All Artists', path: '/articles', slug: 'articles', highlight: true },
+    { label: 'Electronic & Dance', path: '/category/electronic-and-dance', slug: 'electronic-and-dance' },
+    { label: 'Hip-Hop & Rap', path: '/category/hip-hop-rap', slug: 'hip-hop-rap' },
+    { label: 'Latin Music', path: '/category/latin-music', slug: 'latin-music' },
+    { label: 'Indie & Alternative', path: '/category/indie-and-alternative', slug: 'indie-and-alternative' },
+    { label: 'Pop & R&B', path: '/category/pop-and-rnb', slug: 'pop-and-rnb' },
+    { label: 'Global Sounds', path: '/category/global-sounds', slug: 'global-sounds' },
+    { label: 'Categories', path: '/categories', slug: 'categories' }
   ];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -157,13 +158,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-600 flex items-center justify-center text-white shadow-lg shadow-red-600/30 group-hover:rotate-12 transition-transform duration-300">
                     <Music className="w-4 h-4" />
                   </span>
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none flex items-center">
                     <span className="text-white">GLOBE</span>
                     <span className="text-red-600">VIBES</span>
+                    <span className="ml-1 text-xs bg-red-600 text-white font-black px-1.5 py-0.5 rounded shadow-sm">1</span>
                   </div>
                 </div>
                 <span className="hidden sm:block text-[9px] font-mono uppercase tracking-[0.25em] text-neutral-400 mt-1">
-                  Music · Entertainment · Trending
+                  Music Artist Biographies · Careers · Discographies
                 </span>
               </button>
             </div>

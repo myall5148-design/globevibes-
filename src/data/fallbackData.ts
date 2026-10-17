@@ -1,48 +1,41 @@
 import { Article, Category, SiteSettings, AdSlot, Tag } from '../types';
+import { ARTIST_ARTICLES, ARTIST_CATEGORIES, ARTIST_TAGS } from './artistsData';
 
 export const FALLBACK_SETTINGS: SiteSettings = {
   id: 'default',
-  site_name: 'Globevibes',
-  site_description: 'The premier destination for music news, entertainment, trending stories, celebrity buzz, and African entertainment culture.',
+  site_name: 'Globevibes1',
+  site_description: 'Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music.',
   site_url: 'https://globevibez.2bd.net',
-  default_seo_title: 'Globevibes – Music, Entertainment, African Beats & Trending News',
-  default_seo_description: 'Discover the latest music releases, Afrobeats superstars, Nollywood cinema, celebrity exclusives, and viral trending entertainment on Globevibes.',
+  default_seo_title: 'Globevibes1 – Music Artist Biographies & Career Chronicles',
+  default_seo_description: 'Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music on Globevibes1.',
   social_twitter: 'https://x.com/globevibes',
   social_linkedin: 'https://linkedin.com/company/globevibes',
   social_facebook: 'https://facebook.com/globevibes',
   social_instagram: 'https://instagram.com/globevibes',
   social_youtube: 'https://youtube.com/@globevibes',
-  footer_copyright: '© 2026 Globevibes Media Group. All rights reserved.',
+  footer_copyright: '© 2026 Globevibes1. All rights reserved.',
   contact_email: 'editorial@globevibez.2bd.net'
 };
 
 export const FALLBACK_CATEGORIES: Category[] = [
-  {
-    id: 'cat_music',
-    name: 'Music',
-    slug: 'music',
-    description: 'New releases, album breakdowns, concert tours, global charts, and artist exclusives.',
-    image_url: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
-    sort_order: 1,
-    article_count: 3
-  },
+  ...ARTIST_CATEGORIES,
   {
     id: 'cat_entertainment',
     name: 'Entertainment',
     slug: 'entertainment',
-    description: 'Movies, television series, streaming blockbusters, award show galas, and red carpet highlights.',
+    description: 'Music tours, award show galas, festival previews, and red carpet highlights.',
     image_url: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
-    sort_order: 2,
-    article_count: 2
+    sort_order: 10,
+    article_count: 5
   },
   {
     id: 'cat_latest_news',
     name: 'Latest News',
     slug: 'latest-news',
-    description: 'Up-to-the-minute entertainment dispatches, breaking tour announcements, and live industry reporting.',
+    description: 'Up-to-the-minute music dispatches, breaking tour announcements, and live industry reporting.',
     image_url: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
-    sort_order: 3,
-    article_count: 2
+    sort_order: 11,
+    article_count: 5
   },
   {
     id: 'cat_trending',
@@ -50,8 +43,8 @@ export const FALLBACK_CATEGORIES: Category[] = [
     slug: 'trending',
     description: 'Viral music moments, chart-topping anthems, global streaming sensations, and social trends.',
     image_url: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80',
-    sort_order: 4,
-    article_count: 2
+    sort_order: 12,
+    article_count: 5
   },
   {
     id: 'cat_features',
@@ -59,8 +52,8 @@ export const FALLBACK_CATEGORIES: Category[] = [
     slug: 'features',
     description: 'Deep artist profiles, landmark album retrospectives, vinyl culture, and behind-the-studio narratives.',
     image_url: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80',
-    sort_order: 5,
-    article_count: 2
+    sort_order: 13,
+    article_count: 5
   },
   {
     id: 'cat_celebrity_news',
@@ -68,8 +61,8 @@ export const FALLBACK_CATEGORIES: Category[] = [
     slug: 'celebrity-news',
     description: 'Exclusive celebrity interviews, star spotlights, VIP red carpets, and behind-the-scenes access.',
     image_url: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
-    sort_order: 6,
-    article_count: 2
+    sort_order: 14,
+    article_count: 3
   },
   {
     id: 'cat_african_entertainment',
@@ -77,25 +70,21 @@ export const FALLBACK_CATEGORIES: Category[] = [
     slug: 'african-entertainment',
     description: 'Spotlighting Afrobeats global takeover, Nigerian music royalty, Nollywood cinema, and Pan-African creators.',
     image_url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
-    sort_order: 7,
-    article_count: 3
+    sort_order: 15,
+    article_count: 4
   }
 ];
 
 export const FALLBACK_TAGS: Tag[] = [
+  ...ARTIST_TAGS,
   { id: 'tag_afrobeats', name: 'Afrobeats', slug: 'afrobeats', article_count: 4 },
-  { id: 'tag_hiphop', name: 'Hip-Hop', slug: 'hip-hop', article_count: 3 },
-  { id: 'tag_nollywood', name: 'Nollywood', slug: 'nollywood', article_count: 2 },
-  { id: 'tag_grammys', name: 'Grammys', slug: 'grammys', article_count: 2 },
-  { id: 'tag_vinyl', name: 'Vinyl', slug: 'vinyl', article_count: 1 },
-  { id: 'tag_concerts', name: 'Concerts & Tours', slug: 'concerts-tours', article_count: 3 },
-  { id: 'tag_streaming', name: 'Streaming', slug: 'streaming', article_count: 3 },
-  { id: 'tag_interviews', name: 'Interviews', slug: 'interviews', article_count: 2 },
-  { id: 'tag_rnb', name: 'R&B', slug: 'r-and-b', article_count: 2 },
-  { id: 'tag_pop', name: 'Pop', slug: 'pop', article_count: 2 }
+  { id: 'tag_concerts', name: 'Concerts & Tours', slug: 'concerts-tours', article_count: 8 },
+  { id: 'tag_streaming', name: 'Streaming', slug: 'streaming', article_count: 6 },
+  { id: 'tag_interviews', name: 'Interviews', slug: 'interviews', article_count: 5 },
+  { id: 'tag_vinyl', name: 'Vinyl', slug: 'vinyl', article_count: 3 }
 ];
 
-export const FALLBACK_ARTICLES: Article[] = [
+const EDITORIAL_STORIES: Article[] = [
   {
     id: 'art_afrobeats_global',
     title: 'Afrobeats To The World: How Asake, Burna Boy, and Tems Are Selling Out Global Stadiums',
@@ -545,6 +534,11 @@ export const FALLBACK_ARTICLES: Article[] = [
     created_at: new Date(Date.now() - 86400000 * 13).toISOString(),
     updated_at: new Date(Date.now() - 3600000 * 52).toISOString()
   }
+];
+
+export const FALLBACK_ARTICLES: Article[] = [
+  ...ARTIST_ARTICLES,
+  ...EDITORIAL_STORIES
 ];
 
 export const FALLBACK_ADS: AdSlot[] = [

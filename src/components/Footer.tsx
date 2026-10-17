@@ -21,16 +21,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
               <span className="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center text-white shadow-md">
-                <span className="font-black text-xs">GV</span>
+                <span className="font-black text-xs">GV1</span>
               </span>
-              <div className="text-2xl font-black tracking-tight leading-none">
+              <div className="text-2xl font-black tracking-tight leading-none flex items-center">
                 <span className="text-white">GLOBE</span>
                 <span className="text-red-600">VIBES</span>
+                <span className="ml-1 text-xs bg-red-600 text-white font-black px-1.5 py-0.5 rounded">1</span>
               </div>
             </div>
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
               {settings?.site_description ||
-                'The premier digital publication celebrating global music releases, entertainment culture, Afrobeats, Nollywood cinema, and trending world news.'}
+                'Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music.'}
             </p>
             <div className="flex items-center gap-3 pt-2">
               {settings?.social_twitter && (

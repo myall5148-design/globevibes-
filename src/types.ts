@@ -51,6 +51,8 @@ export interface Article {
   seo_description?: string | null;
   canonical_url?: string | null;
   social_image?: string | null;
+  artist_name?: string | null;
+  related_artists?: string[];
   views_count: number;
   tags?: Tag[];
   created_at: string;
@@ -94,6 +96,7 @@ export interface SiteSettings {
   footer_copyright?: string | null;
   contact_email?: string | null;
   analytics_id?: string | null;
+  monetag_smart_link?: string | null;
   updated_at?: string;
 }
 

@@ -1,6 +1,7 @@
 import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
 import fs from 'node:fs';
+import { ARTIST_ARTICLES, ARTIST_CATEGORIES, ARTIST_TAGS } from '../src/data/artistsData';
 
 const dataDir = path.resolve(process.cwd(), 'data');
 if (!fs.existsSync(dataDir)) {
@@ -209,11 +210,11 @@ function seedInitialData() {
         footer_copyright, contact_email
       ) VALUES (
         'default',
-        'Globevibes',
-        'The premier destination for music news, entertainment, trending stories, celebrity buzz, and African entertainment culture.',
+        'Globevibes1',
+        'Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music.',
         'https://globevibez.2bd.net',
-        'Globevibes – Music, Entertainment, African Beats & Trending News',
-        'Discover the latest music releases, Afrobeats superstars, Nollywood cinema, celebrity exclusives, and viral trending entertainment on Globevibes.',
+        'Globevibes1 – Music Artist Biographies & Career Chronicles',
+        'Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music on Globevibes1.',
         'https://x.com/globevibes',
         'https://linkedin.com/company/globevibes',
         'https://facebook.com/globevibes',
@@ -300,16 +301,13 @@ function seedInitialData() {
     { id: 'cat_african_entertainment', name: 'African Entertainment', slug: 'african-entertainment', desc: 'Spotlighting Afrobeats global takeover, Nigerian music royalty, Nollywood cinema, and Pan-African creators.', img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80', order: 7 }
   ];
 
-  const checkCat = db.prepare('SELECT id FROM categories WHERE slug = ?');
   const insertCat = db.prepare(`
-    INSERT INTO categories (id, name, slug, description, image_url, sort_order)
+    INSERT OR IGNORE INTO categories (id, name, slug, description, image_url, sort_order)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
 
   for (const cat of initialCategories) {
-    if (!checkCat.get(cat.slug)) {
-      insertCat.run(cat.id, cat.name, cat.slug, cat.desc, cat.img, cat.order);
-    }
+    insertCat.run(cat.id, cat.name, cat.slug, cat.desc, cat.img, cat.order);
   }
 
   // 6. Music & Entertainment Tags
@@ -326,12 +324,9 @@ function seedInitialData() {
     { id: 'tag_pop', name: 'Pop', slug: 'pop' }
   ];
 
-  const checkTag = db.prepare('SELECT id FROM tags WHERE slug = ?');
-  const insertTag = db.prepare('INSERT INTO tags (id, name, slug) VALUES (?, ?, ?)');
+  const insertTag = db.prepare('INSERT OR IGNORE INTO tags (id, name, slug) VALUES (?, ?, ?)');
   for (const tag of initialTags) {
-    if (!checkTag.get(tag.slug)) {
-      insertTag.run(tag.id, tag.name, tag.slug);
-    }
+    insertTag.run(tag.id, tag.name, tag.slug);
   }
 
   // 7. Seed sample music & entertainment articles if needed
@@ -423,6 +418,45 @@ function seedInitialData() {
       );
       for (const t of art.tags) {
         insertArtTag.run(art.id, t);
+      }
+    }
+  }
+
+  // 7b. Seed all 57 Globevibes1 Music Artist Biographies
+  for (const cat of ARTIST_CATEGORIES) {
+    if (!checkCat.get(cat.slug)) {
+      insertCat.run(cat.id, cat.name, cat.slug, cat.description || '', cat.image_url || '', cat.sort_order || 1);
+    }
+  }
+
+  for (const tag of ARTIST_TAGS) {
+    if (!checkTag.get(tag.slug)) {
+      insertTag.run(tag.id, tag.name, tag.slug);
+    }
+  }
+
+  for (const art of ARTIST_ARTICLES) {
+    if (!checkSpecificArt.get(art.id)) {
+      insertArticle.run(
+        art.id,
+        art.title,
+        art.slug,
+        art.excerpt,
+        art.content,
+        art.featured_image || null,
+        art.featured_image_alt || null,
+        art.image_caption || null,
+        art.author_id || 'author_jordan_cole',
+        art.category_id || 'cat_music',
+        art.is_featured ? 1 : 0,
+        art.seo_title || art.title,
+        art.seo_description || art.excerpt,
+        art.views_count || 3500
+      );
+      if (art.tags && art.tags.length > 0) {
+        for (const t of art.tags) {
+          insertArtTag.run(art.id, t.id);
+        }
       }
     }
   }

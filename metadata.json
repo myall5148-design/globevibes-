@@ -1,6 +1,6 @@
 {
-  "name": "Remix Apextopic",
-  "description": "A modern, high-performance news and editorial publishing platform featuring breaking reports, comprehensive articles, and an enterprise publication suite.",
+  "name": "Globevibes1",
+  "description": "Discover music artists, explore their biographies, learn about their musical careers, and discover interesting facts about their music.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

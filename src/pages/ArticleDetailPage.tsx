@@ -97,7 +97,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ slug, onNa
                 },
                 'publisher': {
                   '@type': 'Organization',
-                  'name': 'Globevibes',
+                  'name': 'Globevibes1',
                   'url': window.location.origin,
                   'logo': {
                     '@type': 'ImageObject',
@@ -539,9 +539,17 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ slug, onNa
         {/* Related Articles Section */}
         {related.length > 0 && (
           <section className="my-12" aria-labelledby="related-coverage-heading">
-            <h3 id="related-coverage-heading" className="font-editorial text-2xl font-bold text-stone-900 pb-3 border-b border-stone-200 mb-6">
-              Related Coverage &amp; Follow-up Analysis
-            </h3>
+            <div className="flex items-center justify-between pb-3 border-b border-stone-200 mb-6">
+              <h3 id="related-coverage-heading" className="font-editorial text-2xl font-bold text-stone-900">
+                Related Artists &amp; Musical Journeys
+              </h3>
+              <button
+                onClick={() => onNavigate('/articles')}
+                className="text-xs font-bold uppercase tracking-wider text-red-600 hover:text-red-700 cursor-pointer"
+              >
+                Browse All Artists →
+              </button>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((art) => (
                 <ArticleCard key={art.id} article={art} onNavigate={onNavigate} variant="standard" />
