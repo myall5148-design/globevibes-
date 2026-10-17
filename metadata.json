@@ -1,0 +1,8 @@
+{
+  "name": "Remix Apextopic",
+  "description": "A modern, high-performance news and editorial publishing platform featuring breaking reports, comprehensive articles, and an enterprise publication suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
